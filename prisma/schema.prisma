@@ -15,8 +15,8 @@ model Survey {
   Token String @unique
   Name  String @db.VarChar(255)
 
-  Phone_no     String  @db.VarChar(255)
-  Company_Name String? @unique @db.VarChar(255)
+  Phone_Number String @db.VarChar(255)
+  Company_Name String @db.VarChar(255)
   Designation  String
 
 }
