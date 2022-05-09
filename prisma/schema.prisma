@@ -10,8 +10,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  Token Int    @id
+model Survey {
+  id    Int    @id @default(autoincrement())
+  Token String @unique
   Name  String @db.VarChar(255)
 
   Phone_no     String  @db.VarChar(255)
