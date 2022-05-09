@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  Token Int    @id
+  Name  String @db.VarChar(255)
+
+  Phone_no     String  @db.VarChar(255)
+  Company_Name String? @unique @db.VarChar(255)
+  Designation  String
+
+}
+
+//migrate
+//   npx prisma migrate dev --name init
+// prisma stuid0
+// npx prisma studio
