@@ -13,7 +13,7 @@ exports.addSurvey = async (SurveyData) => {
       Designation: SurveyData.Designation,
     },
   });
-  console.log(newSurvey);
+  // console.log(newSurvey);
   return newSurvey;
 };
 

@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   console.log("get all survey");
-  // console.log(await surveyService.getSurveys_ByID("ps1nxm"));
+
   const surveys = await surveyService.getAllSurveys();
   res.send(surveys);
 });
@@ -17,8 +17,8 @@ router.post("/", async (req, res) => {
   if (validatedValue.error)
     return res.status(400).send(validatedValue.error.details);
 
-  console.log(validatedValue);
   const newSurvey = await surveyService.addSurvey(validatedValue.value);
+  console.log("post new Survey");
   console.log(newSurvey);
   res.send({ Token: newSurvey.Token });
 });
