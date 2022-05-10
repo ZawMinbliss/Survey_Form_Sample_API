@@ -20,7 +20,7 @@ exports.addSurvey = async (SurveyData) => {
 exports.getAllSurveys = async () => {
   return await Survey.findMany();
 };
-exports.getSurveys_ByID = async (Token) => {
+exports.getSurveys_ByToken = async (Token) => {
   return await Survey.findUnique({
     where: {
       Token,

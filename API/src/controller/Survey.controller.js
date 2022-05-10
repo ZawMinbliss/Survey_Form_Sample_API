@@ -6,7 +6,13 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   console.log("get all survey");
-
+  const token = req.query.token;
+  console.log(token);
+  if (token) {
+    console.log(token);
+    const survey = await surveyService.getSurveys_ByToken(token);
+    return res.send(survey);
+  }
   const surveys = await surveyService.getAllSurveys();
   res.send(surveys);
 });
